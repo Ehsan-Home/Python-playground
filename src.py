@@ -1,10 +1,17 @@
-from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
-import binascii
+dec = {
+    "address": {
+        "public-key":"PK",
+        "private-key":"SK"
+    }
+}
 
-keyPair = RSA.generate(3072)
-publicKey = keyPair.public_key().exportKey()
-privateKey = keyPair.exportKey()
+# publicKey = dec["address"]["public-key"]
+# print(publicKey)
 
-print("public key", publicKey.decode('ascii'))
-print("private key", privateKey.decode('ascii'))
+address2 = {
+    "public-key":"PK2",
+    "private-key":"SK2"
+}
+dec["address2"] = address2
+
+print(dec)
